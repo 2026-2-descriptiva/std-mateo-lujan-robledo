@@ -1,0 +1,101 @@
+supplier_id,supplier,country,city,purchase_date,amount,discount,weight_kg,units,unit_price,contact_email
+0001,IBM Colombia S.A.S.,COL,Medellín,2026-02-02,480000.0,0.0,50.0,5,96000.0,compras2@empresa.com
+0002,Microsoft Colombia Inc.,COL,Bogotá,2026-03-03,980000.0,0.05,5.0,1,980000.0,compras3@empresa.com
+0003,Grupo Éxito S.A.,COL,Medellín,2026-04-04,480000.0,0.2,12.0,1,480000.0,compras4@empresa.com
+0004,Alpina Productos Alimenticios,COL,Sopó,2026-05-05,250000.0,,5.0,2,125000.0,compras5@empresa.com
+0005,Cementos Argos S.A.,COL,Medellín,2026-06-06,250000.0,,,20,12500.0,compras6@empresa.com
+0006,Bancolombia S.A.,COL,Medellín,2026-07-07,3500000.0,0.05,,20,175000.0,compras7@empresa.com
+0007,Ecopetrol S.A.,COL,Bogotá,2026-08-08,1250000.0,0.0,5.0,10,125000.0,compras8@empresa.com
+0008,SAP Colombia S.A.S.,COL,Bogotá,2026-09-01,2100000.0,0.1,5.0,2,1050000.0,compras9@empresa.com
+0009,Oracle Colombia Ltda.,COL,Bogotá,2026-02-10,2100000.0,0.0,2.5,10,210000.0,
+0010,Siemens S.A.S.,COL,Tenjo,2026-03-11,480000.0,,10.0,20,24000.0,compras11@empresa.com
+0011,Schneider Electric,COL,Bogotá,2026-04-12,1250000.0,,50.0,10,125000.0,compras12@empresa.com
+0012,ABB Colombia Ltda.,COL,Bogotá,2026-05-13,480000.0,0.15,,20,24000.0,compras13@empresa.com
+0013,Amazon Web Services Colombia,COL,Bogotá,2026-06-14,1250000.0,0.2,,20,62500.0,compras14@empresa.com
+0014,Google Colombia Ltda.,COL,Bogotá,2026-07-15,980000.0,0.0,2.5,2,490000.0,compras15@empresa.com
+0015,Telefónica Colombia,COL,Bogotá,2026-08-16,1250000.0,0.0,5.0,1,1250000.0,compras16@empresa.com
+0016,Claro Colombia,COL,Bogotá,2026-01-17,3500000.0,,12.0,5,700000.0,compras17@empresa.com
+0017,Nutresa S.A.,COL,Medellín,2026-02-18,750000.0,,10.0,2,375000.0,compras18@empresa.com
+0018,Postobón S.A.,COL,Medellín,2026-03-19,1250000.0,0.0,25.0,2,625000.0,
+0019,Sura S.A.,COL,Medellín,2026-04-20,980000.0,0.05,,10,98000.0,compras20@empresa.com
+0020,Corona S.A.S.,COL,Bogotá,2026-05-21,1250000.0,0.2,,5,250000.0,compras1@empresa.com
+0021,IBM Colombia S.A.S.,COL,Medellín,2026-06-22,250000.0,0.05,2.5,5,50000.0,compras2@empresa.com
+0022,Microsoft Colombia Inc.,COL,Bogotá,2026-07-23,3500000.0,,2.5,2,1750000.0,compras3@empresa.com
+0023,Grupo Éxito S.A.,COL,Medellín,2026-08-24,2100000.0,,50.0,10,210000.0,compras4@empresa.com
+0024,Alpina Productos Alimenticios,COL,Sopó,2026-01-25,3500000.0,0.15,5.0,5,700000.0,compras5@empresa.com
+0025,Cementos Argos S.A.,COL,Medellín,2026-02-26,750000.0,0.05,50.0,20,37500.0,compras6@empresa.com
+0026,Bancolombia S.A.,COL,Medellín,2026-03-27,1250000.0,0.2,,20,62500.0,compras7@empresa.com
+0027,Ecopetrol S.A.,COL,Bogotá,2026-04-01,3500000.0,0.1,,2,1750000.0,
+0028,SAP Colombia S.A.S.,COL,Bogotá,2026-05-02,4800000.0,,2.5,1,4800000.0,compras9@empresa.com
+0029,Oracle Colombia Ltda.,COL,Bogotá,2026-06-03,750000.0,,50.0,10,75000.0,compras10@empresa.com
+0030,Siemens S.A.S.,COL,Tenjo,2026-07-04,480000.0,0.15,12.0,20,24000.0,compras11@empresa.com
+0031,Schneider Electric,COL,Bogotá,2026-08-05,,0.2,10.0,,240000.0,compras12@empresa.com
+0032,ABB Colombia Ltda.,COL,Bogotá,2026-06-01,250000.0,0.0,50.0,20,12500.0,compras13@empresa.com
+0033,Amazon Web Services Colombia,COL,Bogotá,2026-02-07,1250000.0,0.1,,5,250000.0,compras14@empresa.com
+0034,Google Colombia Ltda.,COL,Bogotá,2026-03-08,3500000.0,,,1,3500000.0,compras15@empresa.com
+0035,Telefónica Colombia,COL,Bogotá,2026-04-09,1250000.0,,5.0,20,62500.0,compras16@empresa.com
+0036,Claro Colombia,COL,Bogotá,2026-05-10,480000.0,0.1,50.0,20,24000.0,
+0037,Nutresa S.A.,COL,Medellín,2026-06-11,980000.0,0.05,10.0,2,490000.0,compras18@empresa.com
+0038,Postobón S.A.,COL,Medellín,2026-12-07,250000.0,0.2,10.0,10,25000.0,compras19@empresa.com
+0039,Sura S.A.,COL,Medellín,2026-08-13,250000.0,0.0,10.0,5,50000.0,compras20@empresa.com
+0040,Corona S.A.S.,COL,Bogotá,2026-01-14,980000.0,,,20,49000.0,compras1@empresa.com
+0041,IBM Colombia S.A.S.,COL,Medellín,2026-02-15,480000.0,,,10,48000.0,compras2@empresa.com
+0042,Microsoft Colombia Inc.,COL,Bogotá,2026-03-16,480000.0,0.2,5.0,2,240000.0,compras3@empresa.com
+0043,Grupo Éxito S.A.,COL,Medellín,2026-04-17,4800000.0,0.2,5.0,5,960000.0,compras4@empresa.com
+0044,Alpina Productos Alimenticios,COL,Sopó,2026-05-18,3500000.0,0.05,25.0,2,1750000.0,compras5@empresa.com
+0045,Cementos Argos S.A.,COL,Medellín,2026-06-19,1250000.0,0.15,50.0,5,250000.0,
+0046,Bancolombia S.A.,COL,Medellín,2026-07-20,4800000.0,,12.0,1,4800000.0,compras7@empresa.com
+0047,Ecopetrol S.A.,COL,Bogotá,2026-08-21,980000.0,,,5,196000.0,compras8@empresa.com
+0048,SAP Colombia S.A.S.,COL,Bogotá,2026-01-22,250000.0,0.2,,2,125000.0,compras9@empresa.com
+0049,Oracle Colombia Ltda.,COL,Bogotá,2026-02-23,980000.0,0.0,2.5,1,980000.0,compras10@empresa.com
+0050,Siemens S.A.S.,COL,Tenjo,2026-03-24,980000.0,0.0,2.5,5,196000.0,compras11@empresa.com
+0051,Schneider Electric,COL,Bogotá,2026-04-25,480000.0,0.2,5.0,5,96000.0,compras12@empresa.com
+0052,ABB Colombia Ltda.,COL,Bogotá,2026-05-26,4800000.0,,25.0,2,2400000.0,compras13@empresa.com
+0053,Amazon Web Services Colombia,COL,Bogotá,2026-06-27,4800000.0,,12.0,10,480000.0,compras14@empresa.com
+0054,Google Colombia Ltda.,COL,Bogotá,2026-07-01,980000.0,0.0,,10,98000.0,
+0055,Telefónica Colombia,COL,Bogotá,2026-08-02,2100000.0,0.15,,10,210000.0,compras16@empresa.com
+0056,Claro Colombia,COL,Bogotá,2026-03-01,250000.0,0.0,2.5,10,25000.0,compras17@empresa.com
+0057,Nutresa S.A.,COL,Medellín,2026-02-04,2100000.0,0.0,5.0,2,1050000.0,compras18@empresa.com
+0058,Postobón S.A.,COL,Medellín,2026-03-05,980000.0,,12.0,2,490000.0,compras19@empresa.com
+0059,Sura S.A.,COL,Medellín,2026-04-06,3500000.0,,10.0,10,350000.0,compras20@empresa.com
+0060,Corona S.A.S.,COL,Bogotá,2026-05-07,980000.0,0.0,12.0,20,49000.0,compras1@empresa.com
+0061,IBM Colombia S.A.S.,COL,Medellín,2026-06-08,480000.0,0.0,,20,24000.0,compras2@empresa.com
+0062,Microsoft Colombia Inc.,COL,Bogotá,2026-09-07,250000.0,0.0,,2,125000.0,compras3@empresa.com
+0063,Grupo Éxito S.A.,COL,Medellín,2026-08-10,3500000.0,0.15,12.0,2,1750000.0,
+0064,Alpina Productos Alimenticios,COL,Sopó,2026-01-11,3500000.0,,5.0,10,350000.0,compras5@empresa.com
+0065,Cementos Argos S.A.,COL,Medellín,2026-02-12,250000.0,,10.0,10,25000.0,compras6@empresa.com
+0066,Bancolombia S.A.,COL,Medellín,2026-03-13,1250000.0,0.15,50.0,20,62500.0,compras7@empresa.com
+0067,Ecopetrol S.A.,COL,Bogotá,2026-04-14,4800000.0,0.05,5.0,5,960000.0,compras8@empresa.com
+0068,SAP Colombia S.A.S.,COL,Bogotá,2026-05-15,980000.0,0.0,,20,49000.0,compras9@empresa.com
+0069,Oracle Colombia Ltda.,COL,Bogotá,2026-06-16,250000.0,0.1,,1,250000.0,compras10@empresa.com
+0070,Siemens S.A.S.,COL,Tenjo,2026-07-17,4800000.0,,25.0,2,2400000.0,compras11@empresa.com
+0071,Schneider Electric,COL,Bogotá,2026-08-18,250000.0,,2.5,2,125000.0,compras12@empresa.com
+0072,ABB Colombia Ltda.,COL,Bogotá,2026-01-19,480000.0,0.2,2.5,2,240000.0,
+0073,Amazon Web Services Colombia,COL,Bogotá,2026-02-20,3500000.0,0.0,25.0,2,1750000.0,compras14@empresa.com
+0074,Google Colombia Ltda.,COL,Bogotá,2026-03-21,250000.0,0.2,2.5,10,25000.0,compras15@empresa.com
+0075,Telefónica Colombia,COL,Bogotá,2026-04-22,2100000.0,0.1,,5,420000.0,compras16@empresa.com
+0076,Claro Colombia,COL,Bogotá,2026-05-23,980000.0,,,2,490000.0,compras17@empresa.com
+0077,Nutresa S.A.,COL,Medellín,2026-06-24,1250000.0,,10.0,1,1250000.0,compras18@empresa.com
+0078,Postobón S.A.,COL,Medellín,2026-07-25,,0.15,25.0,,12500.0,compras19@empresa.com
+0079,Sura S.A.,COL,Medellín,2026-08-26,480000.0,0.0,25.0,2,240000.0,compras20@empresa.com
+0080,Corona S.A.S.,COL,Bogotá,2026-01-27,1250000.0,0.05,10.0,1,1250000.0,compras1@empresa.com
+0081,IBM Colombia S.A.S.,COL,Medellín,2026-02-01,980000.0,0.1,10.0,2,490000.0,
+0082,Microsoft Colombia Inc.,COL,Bogotá,2026-03-02,4800000.0,,,5,960000.0,compras3@empresa.com
+0083,Grupo Éxito S.A.,COL,Medellín,2026-04-03,250000.0,,,1,250000.0,compras4@empresa.com
+0084,Alpina Productos Alimenticios,COL,Sopó,2026-05-04,750000.0,0.1,2.5,1,750000.0,compras5@empresa.com
+0085,Cementos Argos S.A.,COL,Medellín,2026-06-05,750000.0,0.1,10.0,20,37500.0,compras6@empresa.com
+0086,Bancolombia S.A.,COL,Medellín,2026-06-07,980000.0,0.1,5.0,5,196000.0,compras7@empresa.com
+0087,Ecopetrol S.A.,COL,Bogotá,2026-08-07,4800000.0,0.1,2.5,1,4800000.0,compras8@empresa.com
+0088,SAP Colombia S.A.S.,COL,Bogotá,2026-01-08,3500000.0,,2.5,1,3500000.0,compras9@empresa.com
+0089,Oracle Colombia Ltda.,COL,Bogotá,2026-02-09,2100000.0,,,5,420000.0,compras10@empresa.com
+0090,Siemens S.A.S.,COL,Tenjo,2026-03-10,750000.0,0.15,,10,75000.0,
+0091,Schneider Electric,COL,Bogotá,2026-04-11,250000.0,0.0,2.5,2,125000.0,compras12@empresa.com
+0092,ABB Colombia Ltda.,COL,Bogotá,2026-12-05,250000.0,0.1,25.0,20,12500.0,compras13@empresa.com
+0093,Amazon Web Services Colombia,COL,Bogotá,2026-06-13,750000.0,0.15,5.0,1,750000.0,compras14@empresa.com
+0094,Google Colombia Ltda.,COL,Bogotá,2026-07-14,1250000.0,,2.5,5,250000.0,compras15@empresa.com
+0095,Telefónica Colombia,COL,Bogotá,2026-08-15,980000.0,,50.0,1,980000.0,compras16@empresa.com
+0096,Claro Colombia,COL,Bogotá,2026-01-16,2100000.0,0.2,,20,105000.0,compras17@empresa.com
+0097,Nutresa S.A.,COL,Medellín,2026-02-17,750000.0,0.05,,2,375000.0,compras18@empresa.com
+0098,Postobón S.A.,COL,Medellín,2026-03-18,3500000.0,0.0,5.0,5,700000.0,compras19@empresa.com
+0099,Sura S.A.,COL,Medellín,2026-04-19,3500000.0,0.05,10.0,2,1750000.0,
+0100,Corona S.A.S.,COL,Bogotá,2026-05-20,480000.0,,2.5,10,48000.0,compras1@empresa.com

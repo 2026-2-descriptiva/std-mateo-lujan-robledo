@@ -1,0 +1,7 @@
+{
+    "python.testing.pytestArgs": [
+        "PRE_04_limpieza"
+    ],
+    "python.testing.unittestEnabled": false,
+    "python.testing.pytestEnabled": true
+}
