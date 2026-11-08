@@ -26,4 +26,43 @@ def pregunta_01():
         ...
     """
 
-    raise NotImplementedError
+    import pandas as pd
+    from pathlib import Path
+
+    # Carpetas principales
+    data_dir = Path("data")
+    submission_dir = Path("submission")
+
+    # Procesar train y test
+    for division in ["train", "test"]:
+
+        datos = []
+
+        # Recorre negative, neutral, positive en orden alfabético
+        for sentimiento_dir in sorted((data_dir / division).iterdir()):
+
+            if sentimiento_dir.is_dir():
+
+                target = sentimiento_dir.name
+
+                # Recorre los archivos .txt en orden alfabético
+                for archivo in sorted(sentimiento_dir.glob("*.txt")):
+
+                    with open(archivo, "r", encoding="utf-8") as f:
+                        phrase = f.read().strip()
+
+                    datos.append((phrase, target))
+
+        # Crear DataFrame
+        df = pd.DataFrame(
+            datos,
+            columns=["phrase", "target"]
+        )
+
+        # Guardar CSV
+        df.to_csv(
+            submission_dir / f"{division}_dataset.csv",
+            index=False
+        )
+
+pregunta_01()
