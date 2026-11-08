@@ -53,3 +53,4 @@ def pregunta_03():
     for letter, value, *_ in data:
         letter_sums[letter] = letter_sums.get(letter, 0) + value
     return [(letter, total) for letter, total in sorted(letter_sums.items())]
+

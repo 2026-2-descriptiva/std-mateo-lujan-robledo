@@ -1,12 +1,16 @@
-def pregunta_05():
+def pregunta_06():
     """
-    Para cada letra de la primera columna (`letter`), encuentre el valor
-    máximo y el valor mínimo de la segunda columna (`value`). Retorne una lista
-    de tuplas `(letra, máximo, mínimo)` ordenada alfabéticamente por la letra.
+    La quinta columna (`metrics`) contiene pares `clave:valor` separados por
+    comas. Para cada clave, encuentre el valor mínimo y el valor máximo que
+    aparecen en todo el archivo. Retorne una lista de tuplas
+    `(clave, mínimo, máximo)` ordenada alfabéticamente por la clave.
+
+    Observe que el orden es mínimo y luego máximo, al contrario de la
+    pregunta 5.
 
     Ejemplo del formato de la respuesta:
 
-        [("A", 9, 2), ("B", 9, 1), ...]
+        [("aaa", 1, 9), ("bbb", 1, 9), ...]
     """
     import gzip
     from datetime import datetime
@@ -45,9 +49,8 @@ def pregunta_05():
                 )
             }
             data.append([col1, col2, col3, col4, col5])
-    # Para cada letra de la primera columna (`letter`), encuentre el valor máximo y el valor mínimo de la segunda columna (`value`). Retorne una lista de tuplas `(letra, máximo, mínimo)` ordenada alfabéticamente por la letra.
     resultado = []
-    for letter in sorted(set(row[0] for row in data)):
-        values = [row[1] for row in data if row[0] == letter]
-        resultado.append((letter, max(values), min(values)))
+    for clave in sorted(set(clave for row in data for clave in row[4].keys())):
+        valores = [row[4][clave] for row in data if clave in row[4]]
+        resultado.append((clave, min(valores), max(valores)))
     return resultado

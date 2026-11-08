@@ -1,12 +1,12 @@
-def pregunta_02():
+
+def pregunta_01():
     """
-    Cuente cuántos registros hay para cada letra de la primera columna
-    (`letter`). Retorne una lista de tuplas `(letra, cantidad)` ordenada
-    alfabéticamente por la letra.
+    Calcule la suma de los valores de la segunda columna (`value`) del
+    archivo `data/data.csv.gz` y retorne el resultado como un número entero.
 
     Ejemplo del formato de la respuesta:
 
-        [("A", 8), ("B", 7), ("C", 5), ...]
+        214
     """
     import gzip
     from datetime import datetime
@@ -42,9 +42,5 @@ def pregunta_02():
             }
 
             data.append([col1, col2, col3, col4, col5])
-        # lista de tuplas `(letra, cantidad)` ordenada alfabéticamente por la letra.
-        resultado = []
-        for letra in sorted(set(row[0] for row in data)):
-            cantidad = sum(1 for row in data if row[0] == letra)
-            resultado.append((letra, cantidad))
-    return resultado
+        total = sum(int(row[1]) for row in data)
+    return total
