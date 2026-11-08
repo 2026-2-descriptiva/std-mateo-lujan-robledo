@@ -1,12 +1,12 @@
-def pregunta_04():
+def pregunta_03():
     """
-    Cuente cuántos registros hay en cada mes, usando la fecha de la tercera
-    columna (`date`). Represente el mes como un texto de dos dígitos y retorne
-    una lista de tuplas `(mes, cantidad)` ordenada por el mes.
+    Sume los valores de la segunda columna (`value`) para cada letra de la
+    primera columna (`letter`). Retorne una lista de tuplas `(letra, suma)`
+    ordenada alfabéticamente por la letra.
 
     Ejemplo del formato de la respuesta:
 
-        [("01", 3), ("02", 4), ("03", 2), ...]
+        [("A", 53), ("B", 36), ("C", 27), ...]
     """
     import gzip
     from datetime import datetime
@@ -32,7 +32,10 @@ def pregunta_04():
             col2 = int(row[1])
 
             # Columna 3: datetime
-            col3 = tuple(map(int, row[2].split("-")))
+            try:
+                col3 = datetime.strptime(row[2], "%Y-%m-%d")
+            except ValueError:
+                col3 = row[2]
 
             # Columna 4: lista
             col4 = row[3].split(",")
@@ -45,9 +48,8 @@ def pregunta_04():
                 )
             }
             data.append([col1, col2, col3, col4, col5])
-        #Cuente cuántos registros hay en cada mes, usando la fecha de la tercera columna (`date`). Represente el mes como un texto de dos dígitos y retorne una lista de tuplas `(mes, cantidad)` ordenada por el mes.
-        resultado = []
-        for mes in range(1, 13):
-            cantidad = sum(1 for registro in data if registro[2][1] == mes)
-            resultado.append((f"{mes:02d}", cantidad))
-    return resultado
+
+    letter_sums = {}
+    for letter, value, *_ in data:
+        letter_sums[letter] = letter_sums.get(letter, 0) + value
+    return [(letter, total) for letter, total in sorted(letter_sums.items())]
