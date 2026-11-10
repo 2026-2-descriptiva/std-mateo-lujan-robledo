@@ -26,3 +26,4 @@
 --
 --  Escriba su consulta debajo de esta línea.
 --
+select K0 , AVG(c12) from tbl1 WHERE c13 > 400 group by K0

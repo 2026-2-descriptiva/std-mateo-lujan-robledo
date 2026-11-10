@@ -21,3 +21,4 @@
 --
 --  Escriba su consulta debajo de esta línea.
 --
+select  COUNT(*) from tbl1

@@ -25,3 +25,4 @@
 --
 --  Escriba su consulta debajo de esta línea.
 --
+SELECT * from tbl0 where c02 >= 300

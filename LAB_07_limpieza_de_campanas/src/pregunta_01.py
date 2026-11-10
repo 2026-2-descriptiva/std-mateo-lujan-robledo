@@ -43,4 +43,37 @@ def clean_campaign_data() -> tuple[pd.DataFrame, pd.DataFrame, pd.DataFrame]:
         ...
     """
 
-    raise NotImplementedError
+    import pandas as pd
+    from pathlib import Path
+
+    # Buscar los 10 archivos comprimidos
+    archivos = sorted(Path("data").glob("bank-marketing-campaing-*.csv.gz"))
+
+    # Verificar que efectivamente sean 10
+    assert len(archivos) == 10, f"Se encontraron {len(archivos)} archivos, se esperaban 10"
+
+    # Leer los archivos
+    dfs = [pd.read_csv(archivo) for archivo in archivos]
+    df = pd.concat(dfs, ignore_index=True).sort_values("client_id").reset_index(drop=True)
+    df.pop("Unnamed: 0")
+
+    client = df[["client_id", "age", "job", "marital", "education", "credit_default", "mortgage"]].copy()
+    client["job"] = client["job"].str.replace(".", "", regex=False).str.replace("-", "_", regex=False)
+    client["education"] = client["education"].str.replace(".", "_", regex=False).replace("unknown", pd.NA)
+    client["credit_default"] = (client["credit_default"] == "yes").astype(int)
+    client["mortgage"] = (client["mortgage"] == "yes").astype(int)
+
+    campaign = df[["client_id", "number_contacts", "contact_duration","previous_campaign_contacts", "previous_outcome", "campaign_outcome"]].copy()
+    campaign["previous_outcome"] = (campaign["previous_outcome"] == "success").astype(int)
+    campaign["campaign_outcome"] = (campaign["campaign_outcome"] == "yes").astype(int)
+    campaign["last_contact_date"] = pd.to_datetime("2022-" + df["month"].astype(str) + "-" + df["day"].astype(str), format="%Y-%b-%d").dt.strftime("%Y-%m-%d")
+
+    economics = df[["client_id", "cons_price_idx","euribor_three_months"]].copy()
+
+    #print(campaign.last_contact_date.value_counts())
+    client.to_csv("submission/client.csv", sep=",", index=False)
+    campaign.to_csv("submission/campaign.csv", sep=",", index=False)
+    economics.to_csv("submission/economics.csv", sep=",", index=False)
+
+    return client,campaign,economics
+

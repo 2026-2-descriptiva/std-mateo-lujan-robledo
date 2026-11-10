@@ -22,3 +22,5 @@
 --
 --  Escriba su consulta debajo de esta línea.
 --
+select strftime("%Y",c14) as año, count(*) as cantidad from tbl1 where strftime("%Y",c14) = '2018' GROUP by año
+

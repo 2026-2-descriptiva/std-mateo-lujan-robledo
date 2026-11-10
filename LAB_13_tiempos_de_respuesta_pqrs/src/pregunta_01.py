@@ -61,4 +61,217 @@ def pregunta_01() -> tuple[pd.DataFrame, pd.DataFrame, pd.DataFrame]:
         ...
     """
 
-    raise NotImplementedError
+
+    import numpy as np
+    from pathlib import Path
+
+
+    # ============================================================
+    # 1. CARGAR DATOS
+    # ============================================================
+
+    letter = pd.read_csv("data/historical_requests_letter.csv.gz")
+    web = pd.read_csv("data/historical_requests_web.csv.gz")
+
+    # ============================================================
+    # 2. ELIMINAR FILAS IDÉNTICAS DENTRO DE CADA CANAL
+    # ============================================================
+
+    web = web.drop_duplicates().copy()
+    letter = letter.drop_duplicates().copy()
+
+
+    # ============================================================
+    # 3. IDENTIFICAR CANAL
+    # ============================================================
+
+    web["channel"] = "web"
+    letter["channel"] = "letter"
+
+
+    # Unir ambas tablas
+    df = pd.concat([web, letter], ignore_index=True)
+
+
+    # ============================================================
+    # 4. CONVERTIR FECHAS
+    # ============================================================
+
+    df["in_date"] = pd.to_datetime(df["in_date"])
+    df["out_date"] = pd.to_datetime(df["out_date"])
+
+
+    # Año de entrada
+    df["year"] = df["in_date"].dt.year
+
+
+    # ============================================================
+    # 5. SOLICITUD RESPONDIDA / PENDIENTE
+    # ============================================================
+
+    df["answered"] = df["out_date"].notna()
+    df["pending"] = df["out_date"].isna()
+
+
+    # ============================================================
+    # 6. DÍAS CALENDARIO
+    # ============================================================
+
+    df["calendar_days"] = (
+        df["out_date"] - df["in_date"]
+    ).dt.days
+
+
+    # ============================================================
+    # 7. DÍAS HÁBILES
+    # ============================================================
+
+    df["business_days"] = np.nan
+
+    mask = df["out_date"].notna()
+
+    df.loc[mask, "business_days"] = np.busday_count(
+        (
+            df.loc[mask, "in_date"] + pd.Timedelta(days=1)
+        ).values.astype("datetime64[D]"),
+
+        (
+            df.loc[mask, "out_date"] + pd.Timedelta(days=1)
+        ).values.astype("datetime64[D]")
+    )
+
+
+    # ============================================================
+    # 8. CUMPLIMIENTO DEL PLAZO
+    # ============================================================
+
+    # Pendientes = False automáticamente
+    df["on_time"] = (
+        df["answered"]
+        & (df["business_days"] <= 15)
+    )
+
+
+    # ============================================================
+    # 9. CHANNEL SUMMARY
+    # ============================================================
+
+    channel_summary = (
+        df.groupby("channel")
+        .agg(
+            requests=("channel", "size"),
+            answered=("answered", "sum"),
+            pending=("pending", "sum"),
+            median_business_days=("business_days", "median"),
+            on_time_rate=("on_time", "mean")
+        )
+        .reset_index()
+        .sort_values("channel")
+        .reset_index(drop=True)
+    )
+
+    channel_summary = channel_summary[[
+        "channel",
+        "requests",
+        "answered",
+        "pending",
+        "median_business_days",
+        "on_time_rate"
+    ]]
+
+
+    # ============================================================
+    # 10. YEARLY SUMMARY
+    # ============================================================
+
+    yearly_summary = (
+        df.groupby(["year", "channel"])
+        .agg(
+            requests=("channel", "size"),
+            pending=("pending", "sum"),
+            on_time_rate=("on_time", "mean")
+        )
+        .reset_index()
+        .sort_values(["year", "channel"])
+        .reset_index(drop=True)
+    )
+
+    yearly_summary = yearly_summary[[
+        "year",
+        "channel",
+        "requests",
+        "pending",
+        "on_time_rate"
+    ]]
+
+
+    # ============================================================
+    # 11. ENTRY DAY SUMMARY
+    # ============================================================
+
+    day_order = [
+        "Monday",
+        "Tuesday",
+        "Wednesday",
+        "Thursday",
+        "Friday",
+        "Saturday",
+        "Sunday"
+    ]
+
+    df["day_name"] = pd.Categorical(
+        df["day_name"],
+        categories=day_order,
+        ordered=True
+    )
+
+    entry_day_summary = (
+        df.groupby("day_name", observed=False)
+        .agg(
+            requests=("day_name", "size"),
+            median_calendar_days=("calendar_days", "median"),
+            median_business_days=("business_days", "median")
+        )
+        .reset_index()
+        .sort_values("day_name")
+        .reset_index(drop=True)
+    )
+
+    entry_day_summary = entry_day_summary[[
+        "day_name",
+        "requests",
+        "median_calendar_days",
+        "median_business_days"
+    ]]
+
+
+    # ============================================================
+    # 12. GUARDAR ARCHIVOS
+    # ============================================================
+
+    submission = Path("submission")
+    submission.mkdir(exist_ok=True)
+
+    channel_summary.to_csv(
+        submission / "channel_summary.csv",
+        index=False
+    )
+
+    yearly_summary.to_csv(
+        submission / "yearly_summary.csv",
+        index=False
+    )
+
+    entry_day_summary.to_csv(
+        submission / "entry_day_summary.csv",
+        index=False
+    )
+
+
+    # ============================================================
+    # 13. RETORNAR TABLAS
+    # ============================================================
+
+    return channel_summary, yearly_summary, entry_day_summary
+
+    

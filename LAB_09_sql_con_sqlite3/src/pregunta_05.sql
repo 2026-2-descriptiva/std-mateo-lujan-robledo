@@ -24,3 +24,4 @@
 --
 --  Escriba su consulta debajo de esta línea.
 --
+select * from tbl0 where c02 =100 or c02 =600

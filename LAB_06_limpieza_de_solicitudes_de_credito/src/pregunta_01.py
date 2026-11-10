@@ -34,4 +34,34 @@ def pregunta_01():
         ...
     """
 
-    raise NotImplementedError
+    import pandas as pd
+    import gzip
+
+
+    with gzip.open(
+        "data/solicitudes_de_credito.csv.gz",
+        "rt",
+        encoding="utf-8"
+    ) as f:
+        df = pd.read_csv(f, sep=None, engine="python")
+    df.pop('Unnamed: 0')
+    df.sexo = df.sexo.str.lower()
+    df.tipo_de_emprendimiento = df.tipo_de_emprendimiento.str.strip().str.lower()
+    df = df.dropna(subset=df.columns.difference(["comuna_ciudadano"]))
+    df.idea_negocio = df.idea_negocio.str.lower().str.replace(r"[-_]"," ",regex=True).str.replace(r"\s+"," ",regex=True).str.strip()
+    df.barrio = df.barrio.str.lower().str.replace(r"[-_]"," ",regex=True).str.replace(r"\s+"," ",regex=True).str.strip()
+    df.comuna_ciudadano = df.comuna_ciudadano.astype("Int64")
+    df.fecha_de_beneficio = pd.to_datetime(df.fecha_de_beneficio, format="mixed", dayfirst=True).dt.strftime("%Y-%m-%d")
+    df.monto_del_credito = pd.to_numeric(df.monto_del_credito.str.replace(r"[$,]","",regex=True).str.strip())
+    df.línea_credito = df.línea_credito.str.lower().str.replace(r"[-]"," ",regex=True).str.strip()
+    df=df.drop_duplicates()
+
+    # print(len(df.línea_credito.unique()))
+    # print(df.línea_credito.unique())
+    # print(df.línea_credito.head(10))
+    # print(df.línea_credito.value_counts(dropna=False).head(10))
+    #print(df.columns)
+
+    df.to_csv("submission/solicitudes_de_credito.csv", sep=";", index=False)
+       
+

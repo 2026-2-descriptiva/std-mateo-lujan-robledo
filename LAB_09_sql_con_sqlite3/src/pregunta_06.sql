@@ -27,3 +27,4 @@
 --
 --  Escriba su consulta debajo de esta línea.
 --
+ select * from tbl1 where K0 = 'A' ORDER BY c14 ASC

@@ -21,3 +21,4 @@
 --
 --  Escriba su consulta debajo de esta línea.
 --
+SELECT * from tbl2 order by c21 ASC limit 1
