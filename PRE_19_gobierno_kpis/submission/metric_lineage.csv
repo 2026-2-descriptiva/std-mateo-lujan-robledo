@@ -1,0 +1,14 @@
+kpi_id,kpi_name,source_file,source_column,mart_column
+KPI01,net_sales,order_lines.csv,quantity,fact_sales.quantity
+KPI01,net_sales,products.csv,unit_price,fact_sales.gross_sales
+KPI01,net_sales,order_lines.csv,discount_pct,fact_sales.net_sales
+KPI02,gross_sales,order_lines.csv,quantity,fact_sales.gross_sales
+KPI02,gross_sales,products.csv,unit_price,fact_sales.gross_sales
+KPI03,orders,order_lines.csv,order_id,fact_sales.order_id
+KPI04,average_order_value,order_lines.csv,order_id,fact_sales.order_id
+KPI04,average_order_value,order_lines.csv,discount_pct,fact_sales.net_sales
+KPI05,discount_rate,order_lines.csv,discount_pct,fact_sales.net_sales
+KPI05,discount_rate,products.csv,unit_price,fact_sales.gross_sales
+KPI06,active_customers,order_lines.csv,customer_id,fact_sales.customer_key
+KPI06,active_customers,customers.csv,customer_id,dim_customer.customer_key
+KPI07,units_sold,order_lines.csv,quantity,fact_sales.quantity

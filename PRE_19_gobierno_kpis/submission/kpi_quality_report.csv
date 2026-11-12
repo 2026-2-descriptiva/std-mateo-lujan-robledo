@@ -1,0 +1,10 @@
+check_id,description,observed,expected,passed
+row_count_matches_source,Todas las líneas de origen llegaron a fact_sales,471,471,True
+unique_grain,"No hay duplicados de (order_id, line_id)",0,0,True
+no_null_measures,Medidas sin valores nulos,0,0,True
+orphan_dates,Toda fecha de hechos existe en dim_date,0,0,True
+orphan_customers,Todo cliente de hechos existe en dim_customer,0,0,True
+orphan_products,Todo producto de hechos existe en dim_product,0,0,True
+non_negative_measures,Cantidades y ventas no negativas,0,0,True
+valid_discount_range,Descuentos entre 0 y 1,0,0,True
+net_sales_consistency,net_sales = gross_sales * (1 - discount_pct),0,0,True

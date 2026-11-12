@@ -1,0 +1,8 @@
+kpi_id,kpi_name,description,formula,grain,unit,owner,source_system,refresh_frequency
+KPI01,net_sales,Ventas netas después de descuentos.,SUM(fact_sales.net_sales),pedido-línea,moneda,Gerencia comercial,sales_mart.db,diaria
+KPI02,gross_sales,Ventas brutas antes de descuentos.,SUM(fact_sales.gross_sales),pedido-línea,moneda,Gerencia comercial,sales_mart.db,diaria
+KPI03,orders,Cantidad de pedidos distintos.,COUNT(DISTINCT fact_sales.order_id),pedido,conteo,Operaciones,sales_mart.db,diaria
+KPI04,average_order_value,Venta neta promedio por pedido.,SUM(net_sales) / COUNT(DISTINCT order_id),pedido,moneda,Gerencia comercial,sales_mart.db,diaria
+KPI05,discount_rate,Proporción de la venta bruta cedida en descuentos.,1 - SUM(net_sales) / SUM(gross_sales),pedido-línea,proporción,Finanzas,sales_mart.db,diaria
+KPI06,active_customers,Clientes distintos con al menos una compra.,COUNT(DISTINCT fact_sales.customer_key),cliente,conteo,Mercadeo,sales_mart.db,diaria
+KPI07,units_sold,Unidades vendidas.,SUM(fact_sales.quantity),pedido-línea,unidades,Operaciones,sales_mart.db,diaria

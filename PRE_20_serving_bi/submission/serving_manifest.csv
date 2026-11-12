@@ -1,0 +1,6 @@
+object_name,object_type,database,source,description,row_count,column_count,columns,refreshed_at
+dashboard_sales,table,bi_serving.db,sales_mart.fact_sales + dimensiones,"Ventas agregadas por mes, región, segmento y categoría",229,12,year_month|year|month|region|segment|category|orders|customers|units|gross_sales|discount_amount|net_sales,2026-11-12T05:39:48Z
+kpi_overview,table,bi_serving.db,sales_mart.fact_sales,KPI globales del periodo,1,8,orders|customers|units|gross_sales|net_sales|average_order_value|discount_rate|refreshed_at,2026-11-12T05:39:48Z
+v_monthly_sales,view,bi_serving.db,dashboard_sales,Tendencia mensual,12,5,year_month|orders|units|gross_sales|net_sales,2026-11-12T05:39:48Z
+v_region_sales,view,bi_serving.db,dashboard_sales,Ventas por región y categoría,9,4,region|category|units|net_sales,2026-11-12T05:39:48Z
+dashboard_sales.csv,file,,bi_serving.dashboard_sales,Exportación plana para herramientas BI,229,12,year_month|year|month|region|segment|category|orders|customers|units|gross_sales|discount_amount|net_sales,2026-11-12T05:39:48Z

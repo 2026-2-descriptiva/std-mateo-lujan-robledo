@@ -1,0 +1,8 @@
+kpi_id,kpi_name,mart_value,source_value,absolute_difference,reconciled,quality_checks_passed,decision,reason
+KPI01,net_sales,672990.5,672990.5,0.0,True,True,publicar,Reconciliado con origen y controles de calidad aprobados
+KPI02,gross_sales,694560.0,694560.0,0.0,True,True,publicar,Reconciliado con origen y controles de calidad aprobados
+KPI03,orders,240.0,240.0,0.0,True,True,publicar,Reconciliado con origen y controles de calidad aprobados
+KPI04,average_order_value,2804.1271,2804.1271,0.0,True,True,publicar,Reconciliado con origen y controles de calidad aprobados
+KPI05,discount_rate,0.0311,0.0311,0.0,True,True,publicar,Reconciliado con origen y controles de calidad aprobados
+KPI06,active_customers,60.0,60.0,0.0,True,True,publicar,Reconciliado con origen y controles de calidad aprobados
+KPI07,units_sold,1352.0,1352.0,0.0,True,True,publicar,Reconciliado con origen y controles de calidad aprobados

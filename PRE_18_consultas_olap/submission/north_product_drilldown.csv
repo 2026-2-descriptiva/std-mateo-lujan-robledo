@@ -1,0 +1,13 @@
+category,product,orders,units,gross_sales,net_sales,share_of_category
+Oficina,Producto 5,15,44,15400,14822.5,0.3306
+Oficina,Producto 7,14,52,12480,11952.0,0.2666
+Oficina,Producto 8,17,53,9540,9306.0,0.2075
+Oficina,Producto 6,11,31,8990,8758.0,0.1953
+Servicios,Producto 9,17,56,51520,50646.0,0.5454
+Servicios,Producto 10,11,38,27740,27265.5,0.2936
+Servicios,Producto 12,8,20,9800,9604.0,0.1034
+Servicios,Producto 11,4,9,5490,5337.5,0.0575
+Tecnología,Producto 2,15,54,34560,33312.0,0.4316
+Tecnología,Producto 1,9,27,21060,20007.0,0.2592
+Tecnología,Producto 4,13,33,15180,14766.0,0.1913
+Tecnología,Producto 3,6,18,9180,9103.5,0.1179
